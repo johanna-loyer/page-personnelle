@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Johanna Loyer · Page personnelle</title>
+  <link rel="icon" href="icones/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <button class="top-right-btn" onclick="switchLanguage()" aria-label="Changer de langue">
+    <span id="language-flag">🇬🇧</span>
+  </button>
+
+  <header>
+    <img src="icones/profile.jpg" alt="Photo de profil" class="profile-pic" />
+    
+    <div>
+      <h1>Johanna Loyer</h1>
+      <h2 id="subtitle">Chercheuse postdoctorante en Cryptologie · Inria Saclay</h2>
+      <a href="https://scholar.google.com/citations?user=8Ga_WVYAAAAJ&hl=fr&oi=ao" target="_blank"><img width="30" height="30"  src="icones/googlescholar.png" /></a>
+      <a href="https://github.com/johanna-loyer" target="_blank"><img width="30" height="30" src="icones/github.png" /></a>
+      <a href="mailto:johanna.loyer@inria.fr"><img width="30" height="30"  src="icones/mail.png" /></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="bio" tabindex="0">
+      <p id="about-text">
+        Je suis en postdoctorat à l'Inria de Saclay dans l'équipe <a href="https://team.inria.fr/grace/" target="_blank" rel="noopener noreferrer">GRACE</a>. Je travaille en cryptanalyse post-quantique, en particulier en cryptanalyse de problèmes en réseaux et en codes, aussi bien en classique qu’en quantique. Je m’intéresse notamment au transfert des techniques entre ces deux domaines. 
+        <br>Auparavant, j'étais en postdoctorat au CWI à Amsterdam où j'ai travaillé avec <a href="https://homepages.cwi.nl/~ducas/" target="_blank" rel="noopener noreferrer">Léo Ducas</a>. 
+        Entre 2020 et 2023, j'ai fait ma thèse sous la direction d'<a href="https://who.paris.inria.fr/Andre.Chailloux/" target="_blank" rel="noopener noreferrer">André Chailloux</a> dans l'équipe <a href="https://www.rocq.inria.fr/secret/" target="_blank" rel="noopener noreferrer">COSMIQ</a> à l'Inria de Paris.
+      </p>
+
+      <a href="CV/CV_en.pdf" class="btn" target="_blank" rel="noopener noreferrer" style="margin-top: 1rem; display: inline-block">CV 🇬🇧</a>
+      
+      <a href="CV/CV.pdf" class="btn" target="_blank" rel="noopener noreferrer" style="margin-top: 1rem; display: inline-block">CV 🇫🇷</a>
+    </section>
+
+
+      
+    </section>
+
+  <section class="publications" tabindex="0">
+  <h3>Publications</h3>
+  <table>
+    <tbody>
+      <tr>
+        <td>ASIACRYPT 2021</td>
+        <td>
+          <a href="https://eprint.iacr.org/2021/570.pdf" target="_blank" rel="noopener noreferrer" class="publication-card" aria-label="Lattice sieving via quantum random walks">
+          <strong>Lattice sieving via quantum random walks</strong>
+          <BR>André Chailloux and Johanna Loyer
+          </a>
+        </td>
+        <td><a href="slides/sieving_qwalks.pdf" class="btn" target="_blank" rel="noopener noreferrer" style="margin-top: 1rem; display: inline-block;"><img width="50" height="50"  src="icones/slides.png" /></a></td>
+      </tr>
+      
+      <tr>
+        <td>PQCrypto 2023</td>
+        <td>
+          <a href="https://eprint.iacr.org/2023/200.pdf" target="_blank" rel="noopener noreferrer" class="publication-card" aria-label="Classical and quantum 3 and 4-sieves to solve SVP with low memory">
+            <strong>Classical and quantum 3 and 4-sieves to solve SVP with low memory</strong>
+            <BR>André Chailloux and Johanna Loyer
+          </a>
+        </td>
+        <td><a href="slides/3-4-sieves.pdf" class="btn" target="_blank" rel="noopener noreferrer" style="margin-top: 1rem; display: inline-block;"><img width="50" height="50"  src="icones/slides.png" /></a></td>
+      </tr>
+      
+      <tr>
+        <td>DCC 2024 <br> CFAIL 2024</td>
+        <td><a href="https://eprint.iacr.org/2024/1358.pdf" target="_blank" rel="noopener noreferrer" class="publication-card" aria-label="Limitations of Quantum Sieving-Based Information-Set Decoding">
+        <strong>Limitations of Quantum Sieving-Based Information-Set Decoding</strong>
+        <BR>Lynn Engelberts, Simona Etinski and Johanna Loyer
+      </a></td>
+      </tr>
+      
+      <tr>
+        <td>CRYPTO 2025</td>
+        <td><a href="https://eprint.iacr.org/2025/575.pdf" target="_blank" rel="noopener noreferrer" class="publication-card" aria-label="Wagner's Algorithm Provably Runs in Subexponential Time for SIS^∞">
+          <strong>Wagner's Algorithm Provably Runs in Subexponential Time for SIS^∞</strong> 
+          <BR> Léo Ducas, Lynn Engelberts and Johanna Loyer
+        </a></td>
+        <td><a href="slides/Wagner_for_SIS.pdf" class="btn" target="_blank" rel="noopener noreferrer" style="margin-top: 1rem; display: inline-block;"><img width="50" height="50"  src="icones/slides.png" /></a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Preprints</h3>
+  <a class="publication-card" >
+    <strong>Lattice Reduction via Dense Sublattices: A Cryptanalytic No-Go</strong> 
+    <BR>Léo Ducas and Johanna Loyer
+  </a>
+  
+  <a class="publication-card" href="https://eprint.iacr.org/2023/1263.pdf" target="_blank" rel="noopener noreferrer" >
+    <strong>Quantum security analysis of Wave</strong> 
+    <BR>Johanna Loyer
+  </a>
+  
+  
+     
+  
+  <br>
+  <h3>Standardisation</h3>
+  NIST 2023 Post-Quantum Cryptography contest Round 1
+        <a href="https://inria.hal.science/hal-04278563/document" target="_blank" rel="noopener noreferrer" class="publication-card" aria-label="Wave digital signature scheme"> 
+          <strong>Wave signature scheme</strong>
+          <BR> <div style="text-align: justify;">Gustavo Banegas, Kévin Carrier, André Chailloux, Alain Couvreur, Thomas Debris-Alazard, Philippe Gaborit, Pierre Karpman, Johanna Loyer, Ruben Niederhagen, Nicolas Sendrier, Benjamin Smith, Jean-Pierre Tillich.</div>
+        </a>
+      </tr>
+  </table>
+
+  <br>
+  <h3><div id="thesis">Thèse de doctorat</div></h3> 
+  <table>
+    <tr>
+        <td><a href="https://theses.hal.science/tel-04390173/file/LOYER_Johanna_these_2023.pdf" target="_blank" rel="noopener noreferrer" class="publication-card"> 
+          <strong>Quantum cryptanalysis of lattices and codes</strong> 
+          </a>
+        </td>
+        <td><a href="slides/PhD_defense.pdf" class="btn" target="_blank" rel="noopener noreferrer" style="margin-top: 1rem; display: inline-block;"><img width="50" height="50" src="icones/slides.png" /></a></td>
+      </tr>
+      
+  </table>
+</section>
+
+<section class="vulgarisation">
+  <h3 id=vulga>Vulgarisation scientifique</h3>
+  <div class="vulgarisation-grid">
+    
+    <a href="vulga/these.pdf" class="vulgarisation-item" target="_blank" rel="noopener noreferrer">
+  <img src="vulga/these.png" />
+      <div class="vulgarisation-meta">
+        <h4 id=outreach1>Vulgarisation de ma thèse</h4>
+        <p style="text-align: center;" id="audience1"> Tous publics 🇫🇷</p>
+      </div>  
+    </a>
+    
+    <a href="vulga/maths.pdf" class="vulgarisation-item" target="_blank" rel="noopener noreferrer">
+  <img src="vulga/maths.png" />
+      <div class="vulgarisation-meta">
+        <h4 id=outreach2>Les maths, à quoi ça sert&nbsp?</h4>
+        <p style="text-align: center;" id="audience2"> Classe de 2nde générale 🇫🇷</p>
+      </div>  
+    </a>
+    
+    <a href="vulga/RSA.pdf" class="vulgarisation-item" target="_blank" rel="noopener noreferrer">
+  <img src="vulga/RSA.png" />
+      <div class="vulgarisation-meta">
+        <h4 id=outreach3>Introduction à la cryptologie </h4>
+        <p style="text-align: center;" id="audience3"> Classe de 3ème 🇫🇷</p>
+      </div>  
+    </a>
+    
+    <a href="vulga/ECC.pdf" class="vulgarisation-item" target="_blank" rel="noopener noreferrer">
+  <img src="vulga/ECC.png" />
+      <div class="vulgarisation-meta">
+        <h4 id=outreach4>Courbes elliptiques et cryptographie</h4>
+        <p style="text-align: center;" id="audience4">Tous publics 🇬🇧</p>
+      </div>  
+    </a>
+
+  </div>
+</section>
+
+
+
+  </main>
+
+  <footer>
+    &copy;2025
+  </footer>
+
+  <!-- SCRIPT TRADUCTION -->
+  <script>
+  const translations = {
+    en: {
+      subtitle: "Postdoctoral researcher in Cryptology · Inria Saclay",
+      aboutText: `I am a postdoctoral researcher at Inria Saclay in the <a href="https://team.inria.fr/grace/" target="_blank" rel="noopener noreferrer">GRACE</a> team. My work focuses on post-quantum cryptanalysis, particularly on lattice and code-based problems, in both classical and quantum settings. I am especially interested in transferring techniques between these domains.
+      <br>Previously, I was a postdoc at CWI in Amsterdam, working with <a href="https://homepages.cwi.nl/~ducas/" target="_blank" rel="noopener noreferrer">Léo Ducas</a>. 
+      From 2020 to 2023, I did my PhD under the supervision of <a href="https://who.paris.inria.fr/Andre.Chailloux/" target="_blank" rel="noopener noreferrer">André Chailloux</a> in the <a href="https://www.rocq.inria.fr/secret/" target="_blank" rel="noopener noreferrer">COSMIQ</a> team at Inria Paris.`,
+      thesis: "Ph.D. thesis",
+      vulga: "Scientific outreach",
+      outreach1: "Popularization of my PhD",
+      outreach2: "What is the use of maths in daily life?",
+      outreach3: "Introduction to cryptology",
+      outreach4: "Elliptic curve cryptography",
+      audience1: "All audience 🇫🇷",
+      audience2: "High school 🇫🇷",
+      audience3: "9th grade 🇫🇷",
+      audience4: "All audience 🇬🇧",
+      
+      flag: "🇫🇷"
+    }
+  };
+
+  const originalTexts = {}; // <- AJOUT ICI
+
+  let currentLang = "fr";
+
+  function switchLanguage() {
+    if (currentLang === "fr") {
+      originalTexts.subtitle = document.getElementById("subtitle").textContent;
+      originalTexts.aboutText = document.getElementById("about-text").innerHTML;
+      
+      originalTexts.thesis = document.getElementById("thesis").textContent;
+      
+      originalTexts.vulga = document.getElementById("vulga").textContent;
+      originalTexts.outreach1 = document.getElementById("outreach1").textContent;
+      originalTexts.outreach2 = document.getElementById("outreach2").textContent;
+      originalTexts.outreach3 = document.getElementById("outreach3").textContent;
+      originalTexts.outreach4 = document.getElementById("outreach4").textContent;
+      originalTexts.audience1 = document.getElementById("audience1").textContent;
+      originalTexts.audience2 = document.getElementById("audience2").textContent;
+      originalTexts.audience3 = document.getElementById("audience3").textContent;
+      originalTexts.audience4 = document.getElementById("audience4").textContent;
+      
+
+      const t = translations.en;
+      document.getElementById("subtitle").textContent = t.subtitle;
+      document.getElementById("about-text").innerHTML = t.aboutText;
+      document.getElementById("thesis").textContent = t.thesis;
+      document.getElementById("vulga").textContent = t.vulga;
+      document.getElementById("language-flag").textContent = t.flag;
+      
+      document.getElementById("outreach1").textContent = t.outreach1;
+      document.getElementById("outreach2").textContent = t.outreach2;
+      document.getElementById("outreach3").textContent = t.outreach3;
+      document.getElementById("outreach4").textContent = t.outreach4;
+      document.getElementById("audience1").textContent = t.audience1;
+      document.getElementById("audience2").textContent = t.audience2;
+      document.getElementById("audience3").textContent = t.audience3;
+      document.getElementById("audience4").textContent = t.audience4;
+      
+      currentLang = "en";
+    } else {
+      document.getElementById("subtitle").textContent = originalTexts.subtitle;
+      document.getElementById("about-text").innerHTML = originalTexts.aboutText;
+      document.getElementById("thesis").textContent = originalTexts.thesis;
+      document.getElementById("vulga").textContent = originalTexts.vulga;
+      document.getElementById("language-flag").textContent = "🇬🇧";
+      
+      document.getElementById("outreach1").textContent = originalTexts.outreach1;
+      document.getElementById("outreach2").textContent = originalTexts.outreach2;
+      document.getElementById("outreach3").textContent = originalTexts.outreach3;
+      document.getElementById("outreach4").textContent = originalTexts.outreach4;
+      document.getElementById("audience1").textContent = originalTexts.audience1;
+      document.getElementById("audience2").textContent = originalTexts.audience2;
+      document.getElementById("audience3").textContent = originalTexts.audience3;
+      document.getElementById("audience4").textContent = originalTexts.audience4;
+      
+      
+      currentLang = "fr";
+    }
+  }
+</script>
+
+
+</body>
+</html>
