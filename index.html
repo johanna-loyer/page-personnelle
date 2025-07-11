@@ -169,6 +169,8 @@
       </div>  
     </a>
   </div>
+  <p id="epsiloon">I was interviewed for an article in the science outreach magazine <i>Epsiloon</i>, you can read it (in French)&nbsp;<a href="https://www.epsiloon.com/tous-les-numeros/n38/panique_chez_les_cryptologues_post-quantiques/" class="btn" target="_blank" style="display: inline;">here!</a>   
+  </p>
 </section>
 
 
@@ -195,7 +197,10 @@
       audience1: "Tous publics 🇫🇷",
       audience2: "Classe de 2nde générale 🇫🇷",
       audience3: "Classe de 3ème 🇫🇷",
-      audience4: "Tous publics 🇬🇧",      
+      audience4: "Tous publics 🇬🇧",    
+      epsiloon: `J'ai été interviewée pour un article du magazine de vulgarisation scientifique <i>Epsiloon</i>, vous pouvez le lire&nbsp;<a href="https://www.epsiloon.com/tous-les-numeros/n38/panique_chez_les_cryptologues_post-quantiques/" class="btn" target="_blank" style="display: inline;">ici !</a>
+`, 
+      
       flag: "🇬🇧"
     }
   };
@@ -220,6 +225,7 @@
       originalTexts.audience2 = document.getElementById("audience2").textContent;
       originalTexts.audience3 = document.getElementById("audience3").textContent;
       originalTexts.audience4 = document.getElementById("audience4").textContent;
+      originalTexts.epsiloon = document.getElementById("epsiloon").innerHTML;
       
 
       const t = translations.fr;
@@ -237,6 +243,7 @@
       document.getElementById("audience2").textContent = t.audience2;
       document.getElementById("audience3").textContent = t.audience3;
       document.getElementById("audience4").textContent = t.audience4;
+      document.getElementById("epsiloon").innerHTML = t.epsiloon;
       
       currentLang = "fr";
     } else {
@@ -254,6 +261,7 @@
       document.getElementById("audience2").textContent = originalTexts.audience2;
       document.getElementById("audience3").textContent = originalTexts.audience3;
       document.getElementById("audience4").textContent = originalTexts.audience4;
+      document.getElementById("epsiloon").innerHTML = originalTexts.epsiloon;
       
       currentLang = "en";
     }
