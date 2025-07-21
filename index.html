@@ -62,7 +62,9 @@
           <BR>André Chailloux and Johanna Loyer
           </a>
         </td>
-        <td><a href="slides/sieving_qwalks.pdf" class="btn" target="_blank" style="margin-top: 1rem; display: inline-block;"><img width="50" height="50"  src="icones/slides.png" /></a></td>
+        <td>
+          <a href="slides/sieving_qwalks.pdf" class="btn" target="_blank" style="margin-top: 1rem; display: inline-block;"><img width="50" height="50"  src="icones/slides.png" /></a>
+        </td>
       </tr>
       
       <tr>
@@ -126,6 +128,7 @@
         <td><a href="https://theses.hal.science/tel-04390173/file/LOYER_Johanna_these_2023.pdf" target="_blank" class="publication-card"> 
           <strong>Quantum cryptanalysis of lattices and codes</strong> 
           </a>
+          <p id="PhDdefensedate">Defended the 18th december 2023.</p>
         </td>
         <td><a href="slides/PhD_defense.pdf" class="btn" target="_blank" style="margin-top: 1rem; display: inline-block;"><img width="50" height="50" src="icones/slides.png" /></a></td>
       </tr>
@@ -138,7 +141,7 @@
   <div class="vulgarisation-grid">
     
     <a href="vulga/these.pdf" class="vulgarisation-item" target="_blank">
-  <img src="vulga/these.png" />
+    <img src="vulga/these.png" />
       <div class="vulgarisation-meta">
         <h4 id=outreach1>Popularization of my PhD</h4>
         <p style="text-align: center;" id="audience1">All audiences 🇫🇷</p>
@@ -146,7 +149,7 @@
     </a>
     
     <a href="vulga/maths.pdf" class="vulgarisation-item" target="_blank">
-  <img src="vulga/maths.png" />
+    <img src="vulga/maths.png" />
       <div class="vulgarisation-meta">
         <h4 id=outreach2>What is the use of maths in daily life?</h4>
         <p style="text-align: center;" id="audience2"> High school 🇫🇷</p>
@@ -154,7 +157,7 @@
     </a>
     
     <a href="vulga/RSA.pdf" class="vulgarisation-item" target="_blank">
-  <img src="vulga/RSA.png" />
+    <img src="vulga/RSA.png" />
       <div class="vulgarisation-meta">
         <h4 id=outreach3>Introduction to cryptology </h4>
         <p style="text-align: center;" id="audience3"> 9th grade 🇫🇷</p>
@@ -162,17 +165,24 @@
     </a>
     
     <a href="vulga/ECC.pdf" class="vulgarisation-item" target="_blank">
-  <img src="vulga/ECC.png" />
+      <img src="vulga/ECC.png" />
       <div class="vulgarisation-meta">
         <h4 id=outreach4>Elliptic curve cryptography</h4>
         <p style="text-align: center;" id="audience4">All audiences 🇬🇧</p>
+      </div>  
+    </a>
+    
+    <a href="vulga/Asiacrypt21_5min.pdf" class="vulgarisation-item" target="_blank">
+      <img src="vulga/asia.png" />
+      <div class="vulgarisation-meta">
+        <h4 id=outreach5>Lattice sieving via quantum walks (in 5 min)</h4>
+        <p style="text-align: center;">Expert 🇬🇧</p>
       </div>  
     </a>
   </div>
   <p id="epsiloon">I was interviewed for an article in the science outreach magazine <i>Epsiloon</i>, you can read it (in French)&nbsp;<a href="https://www.epsiloon.com/tous-les-numeros/n38/panique_chez_les_cryptologues_post-quantiques/" class="btn" target="_blank" style="display: inline;">here!</a>   
   </p>
 </section>
-
 
 
   </main>
@@ -194,12 +204,14 @@
       outreach2: "Les maths, à quoi ça sert ?",
       outreach3: "Introduction à la cryptologie",
       outreach4: "Courbes elliptiques et cryptographie",
+      outreach5: "Crible de réseaux par marches quantiques (en 5 min)",
       audience1: "Tous publics 🇫🇷",
       audience2: "Classe de 2nde générale 🇫🇷",
       audience3: "Classe de 3ème 🇫🇷",
-      audience4: "Tous publics 🇬🇧",    
+      audience4: "Tous publics 🇬🇧",  
       epsiloon: `J'ai été interviewée pour un article du magazine de vulgarisation scientifique <i>Epsiloon</i>, vous pouvez le lire&nbsp;<a href="https://www.epsiloon.com/tous-les-numeros/n38/panique_chez_les_cryptologues_post-quantiques/" class="btn" target="_blank" style="display: inline;">ici !</a>
 `, 
+      PhDdefensedate: 'Soutenue le 18 décembre 2023.',
       
       flag: "🇬🇧"
     }
@@ -215,12 +227,14 @@
       originalTexts.aboutText = document.getElementById("about-text").innerHTML;
       
       originalTexts.thesis = document.getElementById("thesis").textContent;
+      originalTexts.PhDdefensedate = document.getElementById("PhDdefensedate").textContent;
       
       originalTexts.vulga = document.getElementById("vulga").textContent;
       originalTexts.outreach1 = document.getElementById("outreach1").textContent;
       originalTexts.outreach2 = document.getElementById("outreach2").textContent;
       originalTexts.outreach3 = document.getElementById("outreach3").textContent;
       originalTexts.outreach4 = document.getElementById("outreach4").textContent;
+      originalTexts.outreach5 = document.getElementById("outreach5").textContent;
       originalTexts.audience1 = document.getElementById("audience1").textContent;
       originalTexts.audience2 = document.getElementById("audience2").textContent;
       originalTexts.audience3 = document.getElementById("audience3").textContent;
@@ -232,6 +246,7 @@
       document.getElementById("subtitle").textContent = t.subtitle;
       document.getElementById("about-text").innerHTML = t.aboutText;
       document.getElementById("thesis").textContent = t.thesis;
+      document.getElementById("PhDdefensedate").textContent = t.PhDdefensedate;
       document.getElementById("vulga").textContent = t.vulga;
       document.getElementById("language-flag").textContent = t.flag;
       
@@ -239,6 +254,7 @@
       document.getElementById("outreach2").textContent = t.outreach2;
       document.getElementById("outreach3").textContent = t.outreach3;
       document.getElementById("outreach4").textContent = t.outreach4;
+      document.getElementById("outreach5").textContent = t.outreach5;
       document.getElementById("audience1").textContent = t.audience1;
       document.getElementById("audience2").textContent = t.audience2;
       document.getElementById("audience3").textContent = t.audience3;
@@ -250,6 +266,7 @@
       document.getElementById("subtitle").textContent = originalTexts.subtitle;
       document.getElementById("about-text").innerHTML = originalTexts.aboutText;
       document.getElementById("thesis").textContent = originalTexts.thesis;
+      document.getElementById("PhDdefensedate").textContent = originalTexts.PhDdefensedate;
       document.getElementById("vulga").textContent = originalTexts.vulga;
       document.getElementById("language-flag").textContent = "🇫🇷";
       
@@ -257,6 +274,7 @@
       document.getElementById("outreach2").textContent = originalTexts.outreach2;
       document.getElementById("outreach3").textContent = originalTexts.outreach3;
       document.getElementById("outreach4").textContent = originalTexts.outreach4;
+      document.getElementById("outreach5").textContent = originalTexts.outreach5;
       document.getElementById("audience1").textContent = originalTexts.audience1;
       document.getElementById("audience2").textContent = originalTexts.audience2;
       document.getElementById("audience3").textContent = originalTexts.audience3;
