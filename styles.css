@@ -313,3 +313,192 @@ table {
   z-index: 9999;  
 }
 
+
+
+@media (max-width: 480px) {
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+  header div h1 {
+    font-size: 1.8rem;
+  }
+  header div h2 {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 640px) {
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .publications table,
+  .publications tbody,
+  .publications tr,
+  .publications td {
+    display: block;
+    width: 100%;
+  }
+
+  .publications tr {
+    margin-bottom: 1.2rem;
+    padding: 1rem;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+  }
+
+  .publications td {
+    border: none;
+    padding: 0.3rem 0;
+  }
+}
+@media (max-width: 640px) {
+  p {
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  section {
+    padding: 1.2rem 1rem;
+    margin-bottom: 2rem;
+  }
+}
+
+
+
+
+
+
+
+/* --- Publications en cartes --- */
+.pub-card {
+  background: rgba(75, 163, 255, 0.08);
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 6px 20px rgba(15, 52, 94, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.pub-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(75, 163, 255, 0.5);
+}
+
+.pub-badge {
+  display: inline-block;
+  background: #1e90ff;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  margin-bottom: 0.8rem;
+}
+
+.pub-card h4 {
+  margin: 0.2rem 0;
+  font-size: 1.2rem;
+  color: #cfe8fa;
+}
+
+.pub-card p {
+  margin: 0.4rem 0 1rem;
+  font-size: 0.95rem;
+  color: #a9c9ef;
+}
+
+.pub-links a {
+  margin-right: 1rem;
+  font-weight: 600;
+  color: #4ba3ff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.pub-links a:hover {
+  color: #82c7ff;
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Carte entière cliquable */
+.pub-card {
+  background: rgba(75, 163, 255, 0.08);
+  border-radius: 14px;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 6px 20px rgba(15, 52, 94, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.pub-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(75, 163, 255, 0.5);
+}
+
+/* Lien principal (PDF) occupe toute la carte */
+.pub-main-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.pub-main-link h4 {
+  margin: 0.3rem 0;
+  font-size: 1.2rem;
+  color: #cfe8fa;
+}
+
+.pub-main-link p {
+  margin: 0.3rem 0 0.8rem;
+  font-size: 0.95rem;
+  color: #a9c9ef;
+}
+
+.pub-badge {
+  display: inline-block;
+  background: #1e90ff;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  margin-bottom: 0.6rem;
+}
+
+/* Bouton Slides */
+.pub-links {
+  margin-top: 0.5rem;
+}
+
+.btn-slide {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background-color: #4ba3ff;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn-slide:hover {
+  background-color: #82c7ff;
+  color: #000;
+}
+
