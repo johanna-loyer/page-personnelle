@@ -90,8 +90,8 @@
       
       <tr>
         <td>DCC 2024</td>
-        <td><a href="https://eprint.iacr.org/2024/1358.pdf" target="_blank" class="publication-card" aria-label="Limitations of Quantum Sieving-Based Information-Set Decoding">
-        <strong>Limitations of Quantum Sieving-Based Information-Set Decoding</strong>
+        <td><a href="https://eprint.iacr.org/2024/1358.pdf" target="_blank" class="publication-card" aria-label="Quantum Sieving for Code-Based Cryptanalysis and Its Limitations for ISD">
+        <strong>Quantum Sieving for Code-Based Cryptanalysis and Its Limitations for ISD</strong>
         <BR>Lynn Engelberts, Simona Etinski and Johanna Loyer
       </a></td>
       </tr>
@@ -201,9 +201,15 @@
         <p style="text-align: center;">Expert 🇬🇧</p>
       </div>  
     </a>
+    
+    <a href="https://www.epsiloon.com/tous-les-numeros/n38/panique_chez_les_cryptologues_post-quantiques/" class="vulgarisation-item" target="_blank">
+      <img src="vulga/epsiloon.png" />
+      <div class="vulgarisation-meta">
+        <h4 id=outreach6> Interview for an article in the science outreach magazine <i>Epsiloon</i> </h4>
+        <p style="text-align: center;">High school 🇫🇷</p>
+      </div>  
+    </a>
   </div>
-  <p id="epsiloon">I was interviewed for an article in the science outreach magazine <i>Epsiloon</i>, you can read it (in French)&nbsp;<a href="https://www.epsiloon.com/tous-les-numeros/n38/panique_chez_les_cryptologues_post-quantiques/" class="btn" target="_blank" style="display: inline;">here!</a>   
-  </p>
 </section>
 
 <section class="others" tabindex="0">
@@ -237,16 +243,15 @@
       thesis: "Thèse de doctorat",
       vulga: "Vulgarisation scientifique",
       outreach1: "Vulgarisation de ma thèse",
-      outreach2: "Les maths, à quoi ça sert ?",
+      outreach2: "Les maths, à quoi ça sert pour de vrai ?",
       outreach3: "Introduction à la cryptologie",
       outreach4: "Courbes elliptiques et cryptographie",
       outreach5: "Crible de réseaux par marches quantiques (en 5 min)",
+      outreach6: `Interview dans un article du magazine de vulgarisation <i>Epsiloon</i>`,
       audience1: "Tous publics 🇫🇷",
       audience2: "Classe de 2nde générale 🇫🇷",
       audience3: "Classe de 3ème 🇫🇷",
       audience4: "Tous publics 🇬🇧",  
-      epsiloon: `J'ai été interviewée pour un article du magazine de vulgarisation scientifique <i>Epsiloon</i>, vous pouvez le lire&nbsp;<a href="https://www.epsiloon.com/tous-les-numeros/n38/panique_chez_les_cryptologues_post-quantiques/" class="btn" target="_blank" style="display: inline;">ici !</a>
-`, 
       PhDdefensedate: 'Soutenue le 18 décembre 2023.',
       
       PC: 'Comité de programme',
@@ -281,7 +286,7 @@
       originalTexts.audience2 = document.getElementById("audience2").textContent;
       originalTexts.audience3 = document.getElementById("audience3").textContent;
       originalTexts.audience4 = document.getElementById("audience4").textContent;
-      originalTexts.epsiloon = document.getElementById("epsiloon").innerHTML;
+      originalTexts.outreach6 = document.getElementById("outreach6").innerHTML;
       
       originalTexts.PC = document.getElementById("PC").textContent;
       originalTexts.teaching = document.getElementById("teaching").textContent;
@@ -307,7 +312,7 @@
       document.getElementById("audience2").textContent = t.audience2;
       document.getElementById("audience3").textContent = t.audience3;
       document.getElementById("audience4").textContent = t.audience4;
-      document.getElementById("epsiloon").innerHTML = t.epsiloon;
+      document.getElementById("outreach6").innerHTML = t.outreach6;
       
       document.getElementById("PC").textContent = t.PC;
       document.getElementById("teaching").textContent = t.teaching;
@@ -333,7 +338,7 @@
       document.getElementById("audience2").textContent = originalTexts.audience2;
       document.getElementById("audience3").textContent = originalTexts.audience3;
       document.getElementById("audience4").textContent = originalTexts.audience4;
-      document.getElementById("epsiloon").innerHTML = originalTexts.epsiloon;
+      document.getElementById("outreach6").innerHTML = originalTexts.outreach6;
       
       document.getElementById("PC").textContent = originalTexts.PC;
       document.getElementById("teaching").textContent = originalTexts.teaching;
