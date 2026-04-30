@@ -29,8 +29,8 @@ header {
   display: flex;
   align-items: center;
   padding: 3rem 2rem;
-  max-width: 1100px;
-  margin: 0 auto 3rem auto;
+  max-width: 900px;
+  margin: 0 auto 0 auto;
 }
 
 .profile-pic {
@@ -78,8 +78,8 @@ header div h2 {
 }
 
 main {
-  max-width: 900px;
-  margin: 0 auto 4rem auto;
+  max-width: 1000px;
+  margin: 0 auto 2rem auto;
   padding: 0 1.5rem;
 }
 
@@ -107,7 +107,7 @@ p {
   color: #d1d9e6;
   font-weight: 300;
   font-size: 1.1rem;
-  max-width: 700px;
+  max-width: 900px;
   text-align: justify;
 }
 
@@ -501,4 +501,3 @@ table {
   background-color: #82c7ff;
   color: #000;
 }
-
