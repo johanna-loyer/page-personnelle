@@ -1,0 +1,100 @@
+/* === START Dys fonts ========================================================= */
+@font-face {
+	font-display: swap;
+	font-family: 'OpenDyslexic';
+	font-style: normal;
+	font-weight: normal;
+	src: url('fonts/OpenDyslexic-Regular.otf') format('opentype');
+}
+@font-face {
+	font-display: swap;
+	font-family: 'OpenDyslexic';
+	font-style: normal;
+	font-weight: bold;
+	src: url('fonts/OpenDyslexic-Bold.otf') format('opentype');
+}
+@font-face {
+	font-display: swap;
+	font-family: 'OpenDyslexic';
+	font-style: italic;
+	font-weight: normal;
+	src: url('fonts/OpenDyslexic-Italic.otf') format('opentype');
+}
+@font-face {
+	font-display: swap;
+	font-family: 'OpenDyslexic';
+	font-style: italic;
+	font-weight: bold;
+	src: url('fonts/OpenDyslexic-BoldItalic.otf') format('opentype');
+}
+@font-face {
+	font-display: swap;
+	font-family: 'OpenDyslexicMono';
+	font-style: normal;
+	font-weight: normal;
+	src: url('fonts/OpenDyslexicMono-Regular.otf') format('opentype');
+}
+/* === END Dys fonts =========================================================== */
+/* === START Dys content styles ================================================ */
+.dysFontActive_true {
+	font-family: var(--dysFontFamily);
+}
+.dysFontActive_true #menu ul.mnu,
+.dysFontActive_true .op_txt_is_quote,
+.dysFontActive_true .op_labelTxt_is_quote,
+.dysFontActive_true .op_clozeTxt_is_quote,
+.dysFontActive_true select.gapInput,
+.dysFontActive_true input[type="text"].gapInput,
+.dysFontActive_true .exoAsw input {
+	font-family: var(--dysFontFamily);
+}
+.dysFontActive_true .MathJax_SVG_Display,
+.dysFontActive_true .txt_mathtex_tl {
+	font-family: initial;
+}
+/* OpenDyslexic  specific rules */
+body[data-dysFontFamily='OpenDyslexic'].dysFontActive_true .CodeMirror-static pre{
+	font-family: "OpenDyslexicMono";
+	font-size:0.9em;
+}
+
+.dysAltLineColor_true .dysColor_0{
+	color:#DD0000;
+}
+.dysAltLineColor_true .dysColor_1{
+	color:#10A61F;
+}
+.dysAltLineColor_true .dysColor_2{
+	color:#0000FF;
+}
+.dysAltLineColor_true div.stepGapText:not(.gapTextShow) .clozeTxtGap .dysColor_0{
+	color: transparent;
+}
+.dysAltLineColor_true div.stepGapText:not(.gapTextShow) .clozeTxtGap .dysColor_1{
+	color: transparent;
+}
+.dysAltLineColor_true div.stepGapText:not(.gapTextShow) .clozeTxtGap .dysColor_2{
+	color: transparent;
+}
+.dysNumHeadings_false span.counter {
+	display: none;
+}
+.dysScaleH2_true .ssSlide.depth_1 h2 {
+	font-size: 120%;
+}
+.dysScaleH2_true .ssSlide.depth_2 h2 {
+	font-size: 110%;
+}
+.dysScaleH2_true .ssSlide.depth_3 h2 {
+	font-size: 100%;
+}
+.dysScaleH2_true .ssSlide.depth_4 h2 {
+	font-size: 90%;
+}
+.dysScaleH2_true .ssSlide.depth_5 h2 {
+	font-size: 80%;
+}
+.dysScaleH2_true .ssSlide.depth_6 h2 {
+	font-size: 70%;
+}
+/* === END Dys content styles ================================================== */

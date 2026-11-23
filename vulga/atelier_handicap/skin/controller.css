@@ -1,0 +1,803 @@
+@import url('fonts/font.css');
+
+html{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  font-family: var(--textStyle);
+}
+body{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--contentBG);
+  color: var(--contentFG);
+  font-size: 0.9rem;
+  overflow: hidden;
+}
+body.currentImagePending, body.nextImagePending{
+  cursor: wait;
+}
+#accessibility{
+  display: none;
+}
+a:hover, button:hover {
+  opacity: 0.8;
+}
+main{
+  flex: 1 1 auto;
+  display: flex;
+  max-height: calc(100vh - clamp(3rem,14vh, 5rem));
+}
+div.structure{
+  flex: 1 1 auto;
+  max-width: 20rem;
+  min-width: 15rem;
+  border-inline-end: 1px solid var(--borderColor);
+  display: flex;
+  flex-direction: column;
+}
+body.hideOutline .structure{
+  display: none;
+}
+#menu{
+  flex: 1 1 auto;
+}
+
+.scroller{
+  overflow-y: auto;
+  scrollbar-color: var(--accentDarkBG) var(--borderColor);
+}
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  background: var(--borderColor);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--accentDarkBG) ;
+  border-radius: 4em;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+#time{
+  font-size: 1.8rem;
+  display: flex;
+  padding: 0.5rem;
+  border-block-start: 1px solid var(--borderColor);
+}
+body.hideTime #time{
+  display: none;
+}
+#time > span{
+  flex: 1 1 auto;
+  text-align: center;
+}
+#time > span.time{
+  color: var(--contentLightFG);
+}
+#time > span.separator{
+  display: none;
+}
+div.context {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+.images{
+  display: flex;
+  background-color: var(--accentLightBG);
+  align-items: center;
+  justify-content: center;
+}
+.fileWarning{
+  display: none;
+}
+body.isLocal .fileWarning{
+  display: block;
+  color: var(--contentLightFG);
+  background-color: var(--accentLightBG);
+  text-align: center;
+  padding-block: 0.2rem;
+}
+
+body.noNotes .images,
+body.hideNotes .images{
+  flex: 1;
+}
+figure{
+  margin: 0;
+  padding: 1em;
+}
+body.nextImageMissing figure.nextImage{
+  display: none;
+}
+body.sendPointer figure.currentImage img {
+  cursor: crosshair;
+}
+figure.currentImage > figcaption{
+  position: relative;
+}
+figcaption{
+  font-style: italic;
+  color: var(--contentLightFG);
+  text-align: center;
+  font-size: 1.2rem;
+  margin-block-end: 1rem;
+}
+.btnPointer {
+  position: absolute;
+  inset-inline-end: 0;
+  top: 0.1rem;
+  appearance: none;
+  border: 0;
+  padding: 0.2rem;
+  margin: 0;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  color: var(--accentDarkBG);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.btnPointer::before{
+  font-family: "fontello";
+  font-size: 1rem;
+  content: "\F25A";
+}
+html[dir='rtl'] .btnPointer::before {
+    transform: scaleX(-1);
+}
+.btnPointer > span {
+  position: absolute;
+  inset-inline-start: -9999px;
+}
+.sendPointer .btnPointer{
+  background-color: var(--accentDarkBG);
+  color: var(--accentDarkFG);
+
+}
+#notes {
+  border-block-start: 1px solid var(--borderColor);
+  flex: 1 1 auto;
+  padding-inline: 0.5rem;
+  position: relative;
+}
+body.noNotes #notes,
+body.hideNotes #notes{
+  display: none;
+}
+.trainNote{
+  margin-block: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  max-width: 800px;
+  margin-inline: auto;
+}
+.trainNote.current{
+  background-color: var(--inputBG);
+}
+.trainNote_ti{
+  font-style: italic;
+  font-size: 1em;
+  margin-inline: 0;
+  margin-block: 0 0.2em;
+  color: var(--contentLightFG);
+}
+.trainNote_co{
+  margin-inline-start: 1.5rem;
+}
+.trainNote h3{
+  margin-block: 0.5rem 0px;
+  font-size: 1.1em;
+}
+.trainNote p{
+  margin-block: 0.2rem;
+}
+.globalExplanation {
+  background-color: var(--quizExplainBG);
+  color: var(--quizExplainFG);
+  border: 1px solid var(--quizExplainFG);
+  border-radius: 0.5em;
+  margin-inline: 0;
+  margin-block: 0.5em 0;
+  padding: 0.3em 0.6em;
+}
+.imageFrame {
+  display: grid;
+}
+body .imageFrame img{
+  display: block;
+  grid-row: 1;
+  grid-column: 1;
+  justify-self: center;
+  /*! border: 1px solid; */
+  box-shadow: 0 0 0.5rem var(--contentLightFG);
+}
+body.imageOverflow .imageFrame img{
+  width: 100%;
+}
+body.currentImagePending #currentImage::after,
+body.nextImagePending #nextImage::after{
+  font-family: "fontello";
+  content: "\E844";
+  font-style: normal;
+  display: block;
+  grid-row: 1;
+  grid-column: 1;
+  font-size: 4rem;
+  animation: pulse 2s infinite;
+  align-self: center;
+  justify-self: center;
+  border-radius: 10rem;
+  padding: 0.2rem;
+  color: var(--accentDarkFG);
+  background-color: var(--linkColor);
+}
+@keyframes pulse {
+  0% {
+    transform: scale(0.7);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.7);
+  }
+}/*FOOTER*/
+footer{
+  display: flex;
+  border-block-start: 1px solid var(--borderColor);
+  height: clamp(3rem,14vh, 5rem);
+}
+#toolbar{
+  flex: 1;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+  gap: 0.3rem;
+}
+#toolbar li {
+  display: contents;
+}
+#toolbar button {
+  appearance: none;
+  border: 0;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  border-radius: 0.1em;
+  background-color: transparent;
+  color: var(--linkColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#toolbar button:hover {
+  opacity:0.8;
+}
+#toolbar button.btnPrv:disabled,
+#toolbar button.btnNxt:disabled {
+  opacity: 0.5;
+  cursor: auto;
+}
+.isHome #toolbar button.btnPrv,
+.isHome #toolbar button.btnNxt{
+  display: none;
+}
+#toolbar button.btnHme:disabled,
+#toolbar button.btnSrt:disabled {
+  display: none;
+}
+.noNotes #toolbar button.btnNotes{
+  display: none;
+}
+#toolbar button.btnTool::before{
+  font-family: "fontello";
+  font-size: 2rem;
+}
+html[dir='rtl'] #toolbar button.btnTool::before{
+  transform: scaleX(-1);
+}
+#toolbar button.btnOutline::before{content: "\E837";}
+#toolbar button.btnTime::before{content: "\E844";}
+#toolbar button.btnNotes::before{content: "\E82C";}
+#toolbar button.btnHelp::before{content: "\E824";}
+#toolbar button.btnHme::before{content: "\E811";}
+#toolbar button.btnPrv::before{content: "\E80F";}
+#toolbar button.btnNxt::before{content: "\E810";}
+#toolbar button.btnZen::before{content: "\E831";}
+.zenMode #toolbar button.btnZen::before{content: "\E832";}
+#toolbar button.btnSrt {
+  color: var(--accentDarkFG);
+  padding-inline: 1.2rem;
+  margin-block: 0.8rem;
+  background-color: var(--linkColor);
+  border-radius: 0.5em;
+  text-decoration: none;
+  font-size: 2.5em;
+  border: 0;
+  cursor: pointer;
+  transition: all .1s ease-out;
+}
+#toolbar button.btnSrt::after{
+  font-family: "fontello";
+  margin-inline-start: 10px;
+  display: inline-block;
+  transition: all .1s ease-out;
+  font-size: 2rem;
+}
+html[dir='ltr'] #toolbar button.btnSrt::after{content: "\E810";}
+html[dir='rtl'] #toolbar button.btnSrt::after{content: "\E80F";}
+
+:not(.hideOutline) #toolbar button.btnOutline::before,
+:not(.hideOutline) #toolbar button.btnTime::before,
+:not(.hideTime) #toolbar button.btnTime::before,
+:not(.hideNotes) #toolbar button.btnNotes::before {
+  background-color: color-mix(in oklab, var(--linkColor), transparent 85%);
+  padding-inline: 0.3em;
+  padding-block: 0.25em;
+  border-radius: 0.2em;
+}
+.hideOutline #toolbar button.btnOutline::before,
+.hideOutline #toolbar button.btnTime::before,
+.hideTime #toolbar button.btnTime::before,
+.hideNotes #toolbar button.btnNotes::before {
+  background-color: transparent;
+  padding-inline: 0.3em;
+  padding-block: 0.25em;
+}
+
+#toolbar button.btnTool > span {
+  position: absolute;
+  inset-inline-start: -9999px;
+}
+.tooltip{
+  background-color: var(--contentBG);
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px -3px rgba(0,0,0,0.5);
+  font-size: 90%;
+  overflow: hidden;
+}
+.tooltip_co{
+  padding-block: 2px;
+  padding-inline: 1em;
+}
+.tooltip_co ul{
+  padding-inline-start: 1em;
+}
+.tooltip_ti{
+  background-color: var(--accentDarkBG);
+  min-height: 25px;
+  padding-block: 5px;
+  padding-inline: 5px;
+  color: var(--accentDarkFG);
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  align-items: center;
+}
+.tooltip_x{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 0;
+  padding-inline: 0;
+  margin-block: 0;
+  margin-inline: 0;
+  box-sizing: border-box;
+  width: 25px;
+  height: 25px;
+  order: 2;
+  background-color: var(--btnBG);
+  border-radius: 5em;
+  text-decoration: none;
+  position: absolute;
+  inset-inline-end: 5px;
+  top: 5px;
+}
+.tooltip_x::before{
+  font-family: "fontello";
+  content: "\E80B";
+  font-size: 70%;
+  color: var(--accentDarkFG);
+}
+.tooltip_x span{
+  display: none;
+}
+.tooltip_x:hover{
+  text-decoration: none;
+}
+.notInController{
+  display: none;
+}
+
+#counter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  padding-inline: 1.5em;
+}
+
+/* === Contenus notes */
+.solNotes > a{
+  color: var(--quizSolFG);
+  text-decoration: none;
+  font-weight: bold;
+}
+.solNotes > a:before{
+  font-family: "fontello";
+  font-size: 1em;
+}
+html[dir='ltr'] .solNotes > a.solNotes_closed:before{
+  content: "\E810";
+}
+html[dir='rtl'] .solNotes > a.solNotes_closed:before{
+  content: "\E80F";
+}
+.solNotes > a.solNotes_open:before{
+  content: "\E819";
+}
+.solNotes_ti{
+  margin-inline-start: 0.2rem;
+}
+.solNotes_co{
+  border-inline-start: 1px solid var(--quizSolFG);
+  padding-inline-start: 0.4rem;
+  margin-inline-start: 0.4rem;
+}
+.solNotes_co .answer {
+  color: var(--quizSolFG);
+}
+div.quiz > div {
+  margin-block-start: 0.2em;
+  padding-inline-start: 1em;
+}
+ol, ul {
+  margin-block: 0.5rem;
+  padding-inline: 1.5em 0;
+}
+
+/* Texte à séléction */
+.markers{
+    font-size: 75%;
+}
+.selectMarker{
+    border-radius: 0.3em;
+    margin-inline: 0.2em;
+    padding-inline: 0.2em;
+    outline: 1pt solid;
+}
+.txt_select_ph{
+    border-radius: 0.3em;
+    outline: 1pt solid;
+    padding-inline: 1pt;
+}
+.answer.selectText{
+    color: var(--contentFG);
+}
+.simpleSelect .txt_select_ph{
+    outline: 1px solid var(--quizSolFG);
+    background-color: var(--quizSolBG);
+    color: var(--quizSolFG);
+}
+div.simpleSelect p{
+    line-height:140%;
+}
+
+span.txt_gap_tl {
+  min-width: 2em;
+  border: 1px solid var(--quizSolFG);
+  background-color: var(--quizSolBG);
+  color: var(--quizSolFG);
+  border-radius: 6px;
+  font-size: 1em;
+  padding-inline: 4px;
+  margin-block: 1px;
+  margin-inline: 1px;
+}
+
+.mcgSurSol_right,
+.mcqSurSol_right,
+.mcgMurSol_check,
+.mcqMurSol_check,
+.mcgSurSol_wrong,
+.mcqSurSol_wrong,
+.mcgMurSol_unche,
+.mcqMurSol_unche {
+  border: 1px solid var(--quizSolFG);
+  color: var(--quizSolFG);
+  background-color: var(--quizSolBG);
+  border-radius: 0.3rem;
+  margin-block: 0.2rem;
+  padding-inline: 0.2rem;
+  position: relative;
+  padding-inline-end: 2em;
+}
+
+.mcgSurSol_right::after,
+.mcqSurSol_right::after,
+.mcgMurSol_check::after,
+.mcqMurSol_check::after,
+.mcgSurSol_wrong::after,
+.mcqSurSol_wrong::after,
+.mcgMurSol_unche::after,
+.mcqMurSol_unche::after {
+  font-family: "fontello";
+  position: absolute;
+  top: 50%;
+  inset-inline-end: 5px;
+  transform: translateY(-50%);
+}
+.mcgSurSol_right::after, .mcqSurSol_right::after, .mcgMurSol_check::after, .mcqMurSol_check::after {content: "\E835";}
+.mcgSurSol_wrong::after, .mcqSurSol_wrong::after, .mcgMurSol_unche::after, .mcqMurSol_unche::after {content: "\E836";}
+
+.mlqQuiz .group{
+  margin-block: 1px;
+}
+.mlqQuiz .label,
+.mlqQuiz .target{
+  display: inline-block;
+  border: 1px solid var(--quizSolFG);
+  background-color: var(--quizSolBG);
+  color: var(--quizSolFG);
+  border-radius: 6px;
+  font-size: 1em;
+  padding-block: 4px;
+  padding-inline: 4px;
+  margin-block: 1px;
+  margin-inline: 1px;
+  vertical-align: middle;
+}
+.mlqQuiz .spacer {
+  font-size: 1.3rem;
+  line-height: 1rem;
+  display: inline-block;
+  vertical-align: middle;
+  margin-inline: 0.2rem;
+}
+/*TOC*/
+#toc{
+  list-style: none;
+  padding-block: 0;
+  padding-inline: 0;
+  margin-block: 0.5em;
+  margin-inline: 0.2em;
+}
+#toc ul {
+  list-style-image: none;
+  list-style-type: none;
+  margin-block: 0;
+  margin-inline: 0;
+  padding-block: 0;
+  padding-inline: 0;
+}
+#toc li, #toc li > ul {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: fill-available;
+}
+#toc li > ul {
+  margin-inline-start: 25px;
+  order: 3;
+  flex: auto;
+}
+#toc a {
+  order:2;
+  flex: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: fill-available;
+  padding-block: 0.2em;
+  padding-inline: 0.2em;
+  border-radius: 8px;
+  cursor: pointer;
+    color: var(--toolboxFG);
+  text-decoration:none;
+    font-family: var(--titleStyle);
+}
+#toc li > a:has(#toc li > button) {
+  background-color:red;
+}
+#toc a.selected {
+  background-color: var(--toolboxActiveBG);
+  color: var(--toolboxActiveFG);
+}
+#toc a.selected > span {
+  font-weight: 600;
+}
+
+html[dir='rtl'] #toc li a::before {
+    transform: scaleX(-1);
+}
+#toc li a::before {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 1em;
+  height: 1em;
+  font-family: "fontello";
+}
+#toc li.obj a::before {content: "\E822";}
+#toc li.intro a::before {content: "\E823";}
+#toc li.conclu a::before {content: "\E81E";}
+#toc li.expUc a::before {content: "\E81D";}
+#toc li.practUc a::before {content: "\E821";}
+#toc li.richStreamUa a::before {content: "\E80C";}
+#toc li.assmntUa a::before {content: "\E820";}
+#toc li.contact a::before {content: "\E855";}
+#toc li.quiz a::before,
+#toc li.coQuiz a::before {
+	content: "\E824";
+}
+#toc li.quest a::before,
+#toc li.mcgSur a::before {
+  content: "\E820";
+}
+
+#toc .txt_form_tl,
+#toc .txt_form_tim,
+#toc .txt_ico_tim  {
+  display: inline-block;
+  vertical-align: middle;
+}
+#toc .txt_form_tl,
+#toc .txt_form_tim {
+  background-color: var(--accentDarkFG);
+  border-radius: 0.3em;
+  padding-block: 0;
+  padding-inline: 0.1em;
+}
+
+#toc button.btnToggleOpen span,
+#toc button.btnToggleClosed span{
+  display:none;
+}
+#toc button.btnToggleOpen,
+#toc button.btnToggleClosed{
+  order: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 1.3rem;
+  height: 1.3rem;
+  border:0;
+  color:var(--toolboxFG);
+  background-color:transparent;
+  cursor:pointer;
+}
+#toc button.btnToggleOpen::before,
+#toc button.btnToggleClosed::before{
+  font-family: "fontello";
+  font-size: 1em;
+}
+#toc button.btnToggleOpen::before{content:"\E819";}
+html[dir='ltr'] #toc button.btnToggleClosed::before{content:"\E810";}
+html[dir='rtl'] #toc button.btnToggleClosed::before{content:"\E80F";}
+
+/* BALISES PEDAGOGIQUES */
+.bkBp{
+  --pb-color: var(--pBkText);
+  --pb-color-light: var(--pBkTextLight);
+  border: 2px solid var(--pb-color);
+  border-radius: 10px;
+  padding-block: 0.5em;
+  padding-inline: 0.5em;
+}
+
+.bkBp .bkBase_ti{
+  display:flex;
+  align-items: center;
+  gap:15px;
+  margin: 0;
+}
+
+.bkBp .bkBase_ti span.title {
+  flex: 2 1 auto;
+  order: 1;
+}
+
+.bkBp .hidden {
+  display: none;
+}
+
+.bkBp .bkBase_ti i.type {
+  font-size: 0.8em;
+  font-style: normal;
+  font-weight: normal;
+  color: var(--pb-color);
+  flex: 0 0 auto;
+  order: 2;
+  background-color: var(--pb-color-light);
+  border-radius: 5px;
+  padding-block: 4px;
+  padding-inline: 8px;
+}
+
+.bkBase_ti i.type::before{
+  font-family: "fontello";
+  display: inline-block;
+  margin-inline-end: 5px;
+  font-size: 110%;
+}
+
+/* Information */
+.bkInfo .bkBase_co{
+  background: transparent;
+  padding-block: 0;
+  padding-inline: 0;
+  background:none;
+}
+/* Fondamental */
+.bkBasic {
+  --pb-color: var(--pBkText);
+}
+/* Blocs spéciaux */
+.bkWarning {
+  --pb-color: var(--pBkWarning);
+  --pb-color-light: var(--pBkWarningLight);
+}
+.bkComp {
+  --pb-color: var(--pBkComplement);
+  --pb-color-light: var(--pBkComplementLight);
+}
+/* Blocs de démonstration */
+.bkSimul, .bkMeth, .bkEx {
+  --pb-color: var(--pBkDemo);
+  --pb-color-light: var(--pBkDemoLight);
+}
+
+/* Blocs d'expression */
+.txt_blockquote_div {
+  display:flex;
+  align-items: baseline;
+  gap: 10px;
+  font-style:italic;
+  font-size:115%;
+}
+.txt_blockquote_div::before {
+  font-family: "fontello";
+  content: "\E854";
+  font-style:normal;
+}
+
+.bkAdv, .bkRem {
+  --pb-color: var(--pBkExpression);
+  --pb-color-light: var(--pBkExpressionLight);
+}
+
+.bkBasic .bkBase_ti i.type::before{content: "\E82A";}
+
+.bkWarning .bkBase_ti i.type::before{content: "\E81A";}
+.bkComp .bkBase_ti i.type::before{content: "\E829";}
+
+.bkSimul .bkBase_ti i.type::before{content: "\E81B";}
+.bkMeth .bkBase_ti i.type::before{content: "\E82B";}
+.bkEx .bkBase_ti i.type::before{content: "\E82F";}
+
+.bkAdv .bkBase_ti i.type::before{content: "\E828";}
+.bkRem .bkBase_ti i.type::before{content: "\E82C";}
+
+.bkDef .bkBase_ti i.type::before{content: "\E826";}
+.bkLegal .bkBase_ti i.type::before{content: "\E82E";}
+.bkRemind .bkBase_ti i.type::before{content: "\E82D";}
+.bkSyntax .bkBase_ti i.type::before{content: "\E81F";}

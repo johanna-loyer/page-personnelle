@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="fr" xml:lang="fr" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Télécommande — INRIA Saclay</title>
+		<meta charset="UTF-8" />
+		<meta name="generator" content="SCENARI 6.5.5 / Opale 26.0.5" />
+		<meta name="revision" content="2026-11-15 23:58" />
+		<link rel="start" href="index.html" title="Atelier handicap et accessibilité dans l’ESR" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script type="importmap">{"imports":{"skin/":"./skin/","lib-sc/":"./lib-sc/","lib-md/":"./lib-md/"}}</script>
+		<link rel="stylesheet" type="text/css" href="lib-md/w_jsmind/jsmind.css" />
+		<link rel="stylesheet" type="text/css" href="lib-md/w_tePlayer/tePlayer.css" />
+		<script>/*<![CDATA[*/
+/*0*/ var scServices = {id:"mwihwswk"};
+/*1*/ window.scLoadParams = {destUri:"/remote.html", pathToRoot:""};
+/*]]>*/</script>
+		<script src="lib-sc/scCoLib.js" ></script>
+		<script src="lib-sc/scTiLib.js" ></script>
+		<script src="lib-sc/scSiLib.js" ></script>
+		<script src="lib-sc/scPaLib.js" ></script>
+		<script src="lib-sc/scDynUiMgr.js" ></script>
+		<script src="lib-sc/scTooltipMgr.js" ></script>
+		<script src="lib-md/w_teMgr/teLoader.js" ></script>
+		<script src="lib-md/w_tePlayer/tePlayer.js" ></script>
+		<script src="lib-md/w_controller/controller.js" ></script>
+		<script src="lib-md/w_jsmind/jsmind.js" ></script>
+		<script>/*<![CDATA[*/
+tePlayerMgr.init();
+/*]]>*/</script>
+		<link rel="shortcut icon" type="image/png" href="skin/img/favicon.png" />
+		<meta name="robots" content="index,follow" />
+		<link type="text/css" rel="stylesheet" href="types.css" />
+		<link type="text/css" rel="stylesheet" href="skin/controller.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="skin/skin.css" media="screen" /></head>
+	<body class="controller">
+		<nav>
+			<ul id="accessibility">
+				<li class="accessContent"><a href="#tplSldFra"><span>Contenu</span></a></li>
+				<li class="accessMenu"><a href="#toc" onclick="return tocMgr.openToc();"><span>Menu</span></a></li>
+				<li class="accessNav"><a href="#tplRootNav"><span>Navigation</span></a></li></ul></nav>
+		<main>
+			<div class="structure"><nav class="scroller" id="menu" ></nav><aside id="time" ></aside></div>
+			<div class="context"><div class="images"><figure class="currentImage"><figcaption><span>Affichage actuel</span><button class="btnPointer" onclick="controller.togglePointer();" title="Afficher un pointeur sur la fenêtre parente"><span>Pointeur</span></button></figcaption><div class="imageFrame" id="currentImage" ></div></figure><figure class="nextImage"><figcaption><span>Bloc suivant</span></figcaption><div class="imageFrame" id="nextImage" ></div></figure><div class="sizebar"><select aria-label="Taille de la prévisualisation" onChange="controller.setPreviewSize(this.value);" title="Taille de la prévisualisation"><option value="0.75">Grande</option><option selected="selected" value="0.5">Standard</option><option value="0.25">Petite</option></select></div></div><em class="fileWarning"><span>La prévisualisation des images est désactivée en local (adresse commençant par file://).</span></em><section class="scroller" id="notes" ></section></div></main>
+		<footer>
+			<menu id="toolbar">
+				<li><button class="tooltip_a help_a btnTool btnHelp" id="i0" data-sctooltip="{&quot;ttId&quot;:&quot;basketN53&quot;,&quot;trigger&quot;:&quot;onclick&quot;,&quot;class&quot;:&quot;tooltip help&quot;,&quot;classRoot&quot;:&quot;&quot;,&quot;options&quot;:{&quot;STICKY&quot;:true,&quot;FOCUS&quot;:&quot;transient&quot;,&quot;FIXTYPE&quot;:&quot;node&quot;,&quot;FIX&quot;:[0,0],&quot;HPOS&quot;:&quot;startAlign&quot;,&quot;VPOS&quot;:&quot;aboveElement&quot;,&quot;MINWIDTH&quot;:680,&quot;MAXWIDTH&quot;:800,&quot;MAXHEIGHT&quot;:650,&quot;CLSBTN&quot;:true,&quot;CLSBTNCAP&quot;:&quot;✖&quot;,&quot;CLSBTNTI&quot;:&quot;Fermer&quot;}}" title="Affiche la liste des raccourcis clavier disponibles"><span>Aide</span></button><sup class="tooltip_ref help_ref"><a href="#basketN53"><span>[</span>*<span>]</span></a></sup></li>
+				<li><button class="btnTool btnOutline" onclick="controller.toggleOutline();" title="Cacher la barre latérale"><span>Plan</span></button></li>
+				<li><button class="btnTool btnTime" onclick="controller.toggleTime();" title="Cacher le temps écoulé"><span>Temps</span></button></li>
+				<li><button class="btnTool btnNotes" onclick="controller.toggleNotes();" title="Cacher les notes formateur"><span>Notes</span></button></li>
+				<li><button class="btnTool btnHme" onclick="controller.home();" title="Revenir à l&apos;accueil (touche H)"><span>Accueil</span></button></li>
+				<li><button class="btnSrt" onclick="controller.start();" title="Démarrer (flèche droite)"><span>Démarrer</span></button></li>
+				<li><button class="btnTool btnPrv" onclick="controller.previous();" title="Précédent (flèche gauche)"><span>Précédent</span></button></li>
+				<li><button class="btnTool btnNxt" onclick="controller.next();" title="Suivant (flèche droite)"><span>Suivant</span></button></li>
+				<li><button class="btnTool btnZen" onclick="controller.toggleZen();" title="Cacher les outils pour agrandir le contenu"><span>Cacher outils</span></button></li></menu>
+			<span id="counter" ></span></footer>
+		<div class="basket "><div class="" id="basketN53"><div class="">Liste des raccourcis clavier</div><div class=""><p>Liste des fonctions de navigation et leurs raccourcis clavier correspondants :</p><ul><li><strong aria-label="Fonction Bloc Suivant">Bloc Suivant</strong><span aria-label="est activée par"> : </span><em>flèche droite, flèche bas, barre espace, page suivante, touche N</em></li><li><strong aria-label="Fonction Bloc Précédent">Bloc Précédent</strong><span aria-label="est activée par"> : </span><em>flèche gauche, flèche haut, retour arrière, page précédente, touche P</em></li><li><strong aria-label="Fonction Diapositive Suivante">Diapositive Suivante</strong><span aria-label="est activée par"> : </span><em>touche T</em></li><li><strong aria-label="Fonction Diapositive Précédente">Diapositive Précédente</strong><span aria-label="est activée par"> : </span><em>touche S</em></li><li><strong aria-label="Aller à la première diapositive">Première diapositive</strong><span aria-label="est activée par"> : </span><em>touche Début</em></li><li><strong aria-label="Revenir à l&apos;accueil">Revenir à l'accueil</strong><span aria-label="est activée par"> : </span><em>touche H</em></li><li><strong aria-label="Fonction Menu">Menu</strong><span aria-label="est activée par"> : </span><em>touche M</em></li><li class="notInController"><strong aria-label="Afficher la télécommande">Télécommande</strong><span aria-label="est activée par"> : </span><em>touche R</em></li><li class="notInController"><strong aria-label="Fonction Plein écran">Plein écran</strong><span aria-label="est activée par"> : </span><em>touche F</em></li><li><strong aria-label="Fonction Cacher outils">Cacher outils</strong><span aria-label="est activée par"> : </span><em>touche Z</em></li><li class="notInController"><strong aria-label="Fonction Fermer zoom">Fermer zoom</strong><span aria-label="est activée par"> : </span><em>touche Échap.</em></li></ul></div></div></div>
+		<script src="skin/skin.js" ></script>
+		<script>/*<![CDATA[*/
+/* 0 */ controller.init();
+/*]]>*/</script>
+		<script>/*<![CDATA[*/scTooltipMgr.registerTooltips();/*]]>*/</script></body></html>

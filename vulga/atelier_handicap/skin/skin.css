@@ -1,0 +1,118 @@
+:root {
+	--textStyle: Roboto;
+  --titleStyle: Chivo;
+  --fontSize: 1.1em;
+  --menuWidth: 300px;
+}
+
+html[data-theme='light'] {
+  --homeBG1:#d3dfef;
+  --homeBG2:#f4f5fb;
+
+	--linkColor:#3f428b;
+
+	--btnBG:#40418c;
+
+	--borderColor:#c7d7f0;
+
+  --toolboxBG:#d7e5f9;
+	--toolboxFG:#5a5671;
+	--toolboxActiveBG:#3f418b;
+	--toolboxActiveFG:#ffffff;
+
+  --contentBG:#f4f5fb;
+	--contentFG: #11264c;
+	--contentLightFG: #818da7;
+
+	--accentDarkBG: #3f428b;
+	--accentDarkFG: #FFFFFF;
+	--accentLightBG: #f0f6ff;
+	--accentLightFG: #3f428b;
+
+  --pBkText: #6e1381;
+  --pBkTextLight: #f3d6f5;
+  --pBkDemo: #7d3b6f;
+  --pBkDemoLight: #ffe0f5;
+  --pBkExpression: #297055;
+  --pBkExpressionLight: #d2eae2;
+  --pBkWarning: #970000;
+  --pBkWarningLight: #FFD7D7;
+  --pBkComplement: #978800;
+  --pBkComplementLight: #FFF9C6;
+
+  --headerBG:#f4f5fb;
+  --headerFG:#000000;
+
+	--footerBG:#f4f5fb;
+	--footerFG:#12264c;
+
+	--quizAnswerBG:#e2f8d9;
+	--quizAnswerFG:#295716;
+	--quizWorstFG:#aa1016;
+	--quizWorstBG:#ffe7e7;
+	--quizBadFG:#9f5c00;
+  --quizSolFG:#246C8A;
+  --quizSolBG:#d8ebf4;
+  --quizExplainBG:#fffce3;
+  --quizExplainFG:#574f08;
+
+	--inputBG:#ebedf9;
+	--inputBorder:#c8d7ee;
+	--inputFocus:#2a619d;
+}
+
+html[data-theme='dark'] {
+  --homeBG1:#254e7a;
+  --homeBG2:#2a2730;
+
+  --linkColor:#939de1;
+
+	--btnBG:#c5c2f5;
+
+  --borderColor: #3F3F3F;
+
+  --toolboxBG:#3b3540;
+  --toolboxFG:#939de1;
+  --toolboxActiveBG:#423b72;
+  --toolboxActiveFG:#f5f0ff;
+
+  --contentBG:#2a2730;
+  --contentFG: #ddd2e4;
+  --contentLightFG: #fdfaff;
+
+  --accentDarkBG:#6e79bf;
+  --accentDarkFG:#e9e3f2;
+  --accentLightBG:#3b3540;
+  --accentLightFG:#ffffff;
+
+  --pBkText:#f3d6f5;
+  --pBkTextLight:#6e1481;
+  --pBkDemo:#fee0f5;
+  --pBkDemoLight:#7d3b6f;
+  --pBkExpression:#d2eae2;
+  --pBkExpressionLight:#297055;
+  --pBkWarning:#FFD7D7;
+  --pBkWarningLight:#970000;
+  --pBkComplement:#FFF9C6;
+  --pBkComplementLight:#978800;
+
+  --headerBG:#2c283a;
+  --headerFG:#f1ebf9;
+
+  --footerBG:#2c283a;
+  --footerFG:#f1eaf9;
+
+  --quizAnswerBG:#293e21;
+  --quizAnswerFG:#3ca610;
+  --quizWorstFG:#ff5d63;
+  --quizWorstBG:#36191a;
+  --quizBadFG:#d38c2a;
+  --quizSolFG:#E8F3F8;
+  --quizSolBG:#246C8A;
+  --quizExplainBG:#3b3503;
+  --quizExplainFG:#e3dc9f;
+
+  --inputBG:#27223d;
+  --inputBorder:#262626;
+  --inputFocus:#2a619d;
+}
